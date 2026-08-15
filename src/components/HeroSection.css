@@ -1,0 +1,196 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 20s ease;
+  z-index: 0;
+}
+
+.hero-section:hover .hero-bg {
+  transform: scale(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(139, 26, 74, 0.45) 0%,
+    rgba(201, 56, 106, 0.3) 40%,
+    rgba(255, 174, 203, 0.2) 80%,
+    rgba(255, 240, 248, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 720px;
+  width: 90%;
+
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-cap-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-cap-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.4) 0%, transparent 70%);
+  animation: pulseCapGlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseCapGlow {
+  0%, 100% { transform: scale(0.9); opacity: 0.4; }
+  50%       { transform: scale(1.4); opacity: 0.9; }
+}
+
+.hero-cap {
+  font-size: 5.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  animation: floatCap 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 20px rgba(212, 168, 83, 0.8));
+  position: relative;
+  z-index: 1;
+}
+
+.hero-emoji-heart {
+  display: inline-block;
+  animation: pulseHeart 1.5s ease-in-out infinite;
+}
+
+/* Milestone pills row */
+.hero-milestones {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.milestone-pill {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.milestone-pill:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+@keyframes floatCap {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-16px) rotate(4deg); }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 4px 24px rgba(139, 26, 74, 0.6), 0 2px 8px rgba(0,0,0,0.3);
+  animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0%, 100% { text-shadow: 0 4px 24px rgba(139, 26, 74, 0.6), 0 2px 8px rgba(0,0,0,0.3); }
+  50%       { text-shadow: 0 4px 40px rgba(255, 128, 170, 0.9), 0 0 80px rgba(212,168,83,0.4), 0 2px 8px rgba(0,0,0,0.3); }
+}
+
+.cursor-blink {
+  animation: blink 0.7s step-end infinite;
+  color: #ffaecb;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.hero-hearts {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+}
+
+.hero-hearts span:nth-child(1) { animation: pulseHeart 1.6s ease-in-out infinite; }
+.hero-hearts span:nth-child(2) { animation: pulseHeart 1.6s ease-in-out infinite 0.3s; }
+.hero-hearts span:nth-child(3) { animation: pulseHeart 1.6s ease-in-out infinite 0.6s; }
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.hero-tagline {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 12px rgba(139, 26, 74, 0.5);
+  margin-bottom: 2.5rem;
+}
+
+/* Scroll hint */
+.hero-scroll-hint {
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-arrow {
+  display: inline-block;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+@media (max-width: 480px) {
+  .hero-cap { font-size: 3.5rem; }
+  .hero-hearts { font-size: 1.5rem; }
+}

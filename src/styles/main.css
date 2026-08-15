@@ -1,0 +1,217 @@
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@500;700&display=swap');
+
+/* ─── CSS Variables ────────────────────────────────────────── */
+:root {
+  --pink-100: #fff0f5;
+  --pink-200: #ffd6e7;
+  --pink-300: #ffaecb;
+  --pink-400: #ff80aa;
+  --pink-500: #e75480;
+  --pink-600: #c9386a;
+  --rose-dark: #8b1a4a;
+  --gold: #d4a853;
+  --gold-light: #f5d98b;
+  --white: #ffffff;
+  --text-dark: #3a1a2a;
+  --text-muted: #7a4a5e;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-soft: 0 8px 32px rgba(231, 84, 128, 0.18);
+  --shadow-strong: 0 16px 48px rgba(139, 26, 74, 0.22);
+}
+
+/* ─── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--pink-100);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── Floating Hearts Background ───────────────────────────── */
+.hearts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heart-particle {
+  position: absolute;
+  bottom: -60px;
+  font-size: 1.4rem;
+  animation: floatHeart linear infinite;
+  opacity: 0;
+  user-select: none;
+}
+
+@keyframes floatHeart {
+  0%   { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
+  10%  { opacity: 0.7; }
+  80%  { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-110vh) rotate(30deg) scale(1.2); }
+}
+
+/* ─── Page Transitions ─────────────────────────────────────── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* ─── Fade-in utility ──────────────────────────────────────── */
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Slide-up utility ─────────────────────────────────────── */
+.slide-up {
+  animation: slideUp 0.8s ease both;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Pulse heart utility ──────────────────────────────────── */
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ─── Glow text ────────────────────────────────────────────── */
+@keyframes glowText {
+  0%, 100% { text-shadow: 0 0 12px rgba(231,84,128,0.4); }
+  50%       { text-shadow: 0 0 32px rgba(231,84,128,0.9), 0 0 64px rgba(212,168,83,0.5); }
+}
+
+/* ─── Gradient background ──────────────────────────────────── */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 50%, #ffe4f0 100%);
+}
+
+/* ─── Section title ────────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--rose-dark);
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--pink-500);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ─── Divider ──────────────────────────────────────────────── */
+.divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-400), var(--gold), var(--pink-400));
+  border-radius: 999px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--pink-100); }
+::-webkit-scrollbar-thumb { background: var(--pink-300); border-radius: 999px; }
+
+/* ─── Floating Audio Control Widget ────────────────────────── */
+.audio-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+}
+
+.audio-btn {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 174, 203, 0.6);
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(231, 84, 128, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.audio-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(231, 84, 128, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.audio-icon {
+  font-size: 1.2rem;
+}
+
+.sound-wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+
+.wave-bar {
+  width: 3px;
+  background: #e75480;
+  border-radius: 2px;
+  height: 4px;
+  transition: height 0.3s ease;
+}
+
+.audio-btn.playing .bar-1 { animation: soundBar 0.8s ease-in-out infinite alternate; }
+.audio-btn.playing .bar-2 { animation: soundBar 0.8s ease-in-out infinite alternate 0.2s; }
+.audio-btn.playing .bar-3 { animation: soundBar 0.8s ease-in-out infinite alternate 0.4s; }
+
+@keyframes soundBar {
+  0%   { height: 4px; }
+  100% { height: 14px; }
+}
+
+

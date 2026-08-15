@@ -1,0 +1,11 @@
+.main-page {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

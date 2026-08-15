@@ -1,0 +1,180 @@
+.love-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #fff0f8 0%, #fde8f2 50%, #fff5fa 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.love-section::before {
+  content: '💗';
+  position: absolute;
+  font-size: 18rem;
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.love-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* Title */
+.love-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #8b1a4a;
+  margin-bottom: 0.6rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+
+.love-title.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Message cards grid */
+.messages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Individual card */
+.msg-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 174, 203, 0.45);
+  border-radius: 22px;
+  padding: 1.8rem 1.6rem;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(231, 84, 128, 0.12);
+  transition: opacity 0.7s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.msg-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.msg-icon {
+  font-size: 2.2rem;
+  display: block;
+}
+
+.msg-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #8b1a4a;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(255, 174, 203, 0.5);
+}
+
+.card-heart-btn {
+  font-size: 0.9rem;
+  color: #e75480;
+  font-weight: 700;
+}
+
+.tap-hint {
+  font-size: 0.75rem;
+  color: #a06078;
+  font-style: italic;
+}
+
+.closing-seal {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  animation: pulseHeart 2s ease-in-out infinite;
+}
+
+.msg-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.msg-card:hover {
+  box-shadow: 0 12px 36px rgba(231, 84, 128, 0.2);
+  transform: translateY(-4px);
+}
+
+.msg-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.msg-quote {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #5a2a3e;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* Closing quote */
+.love-closing {
+  background: linear-gradient(135deg, rgba(231,84,128,0.1), rgba(212,168,83,0.12));
+  border: 1.5px solid rgba(212,168,83,0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.love-closing.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.love-closing-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  color: #8b1a4a;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.love-closing-sig {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #c9386a;
+}
+
+@media (max-width: 600px) {
+  .messages-grid {
+    grid-template-columns: 1fr;
+  }
+  .msg-card {
+    text-align: center;
+  }
+}

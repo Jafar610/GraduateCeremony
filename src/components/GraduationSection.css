@@ -1,0 +1,214 @@
+.grad-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, #3a0a20 0%, #6b1a38 50%, #8b1a4a 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Confetti layer */
+.grad-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 10%;
+  animation: confettiFall 6s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50%  { transform: translateY(60px) rotate(180deg); opacity: 0.3; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.6; }
+}
+
+.grad-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Badge */
+.grad-badge {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #d4a853, #f5d98b, #d4a853);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(212, 168, 83, 0.5), 0 0 0 6px rgba(212, 168, 83, 0.2);
+
+  opacity: 0;
+  transform: scale(0.6) rotate(-15deg);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.grad-badge.badge-pop {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.grad-badge-icon {
+  font-size: 3.5rem;
+}
+
+/* Title */
+.grad-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.grad-title.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtitle */
+.grad-subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  color: #f5d98b;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.grad-subtitle.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider (uses global .divider from main.css, gold tint overridden below) */
+.grad-section .divider {
+  background: linear-gradient(90deg, #d4a853, #f5d98b, #d4a853);
+  margin-bottom: 2.5rem;
+}
+
+/* Message body */
+.grad-message {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 230, 242, 0.9);
+  line-height: 1.9;
+  margin-bottom: 3rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.grad-message.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.grad-message strong {
+  color: #f5d98b;
+  font-weight: 700;
+}
+
+/* Achievements row */
+.achievements-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(212, 168, 83, 0.3);
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  min-width: 120px;
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
+}
+
+.achievement-item.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievement-item:hover {
+  background: rgba(212, 168, 83, 0.15);
+  transform: translateY(-4px);
+}
+
+.achievement-icon {
+  font-size: 2.2rem;
+}
+
+/* Celebrate Button */
+.celebrate-btn-wrap {
+  margin-top: 3rem;
+}
+
+.btn-celebrate {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3a0a20;
+  background: linear-gradient(135deg, #f5d98b 0%, #d4a853 100%);
+  border: 2px solid #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(212, 168, 83, 0.5), 0 0 0 4px rgba(245, 217, 139, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-celebrate:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 14px 44px rgba(212, 168, 83, 0.7), 0 0 0 6px rgba(245, 217, 139, 0.3);
+  background: linear-gradient(135deg, #fff 0%, #f5d98b 100%);
+}
+
+.btn-celebrate.celebrated {
+  animation: wobble 0.6s ease-in-out;
+}
+
+.celebrate-icon {
+  font-size: 1.5rem;
+  animation: floatCap 2s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  .achievements-row {
+    gap: 0.8rem;
+  }
+  .achievement-item {
+    min-width: 100px;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,234 @@
+.surprise-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff0f8 0%, #ffd6eb 40%, #ffe8f0 70%, #fff5fa 100%);
+  z-index: 1;
+}
+
+/* Decorative blurred circles */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.deco-1 {
+  width: 420px; height: 420px;
+  background: rgba(255, 128, 170, 0.25);
+  top: -100px; left: -100px;
+}
+.deco-2 {
+  width: 320px; height: 320px;
+  background: rgba(212, 168, 83, 0.18);
+  bottom: -80px; right: -80px;
+}
+.deco-3 {
+  width: 200px; height: 200px;
+  background: rgba(231, 84, 128, 0.15);
+  top: 50%; left: 60%;
+}
+
+/* Card */
+.surprise-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255, 174, 203, 0.5);
+  border-radius: 28px;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 6vw, 5rem);
+  max-width: 560px;
+  width: 90%;
+  text-align: center;
+  box-shadow:
+    0 8px 32px rgba(231, 84, 128, 0.14),
+    0 32px 72px rgba(139, 26, 74, 0.1),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+
+  /* Entrance animation */
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.surprise-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Card Header Tag */
+.card-badge-header {
+  margin-bottom: 1.2rem;
+}
+
+.sparkle-tag {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(231, 84, 128, 0.15), rgba(212, 168, 83, 0.2));
+  color: #c9386a;
+  border: 1px solid rgba(231, 84, 128, 0.3);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Heart icon wrapper with glow ring */
+.heart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.heart-glow-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(231, 84, 128, 0.3) 0%, transparent 70%);
+  animation: pulseRing 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(0.9); opacity: 0.5; }
+  50%       { transform: scale(1.3); opacity: 0.9; }
+}
+
+/* Heart icon */
+.heart-icon {
+  font-size: 3.8rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  animation: pulseHeart 1.8s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.15); }
+}
+
+/* Title */
+.surprise-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  font-weight: 700;
+  color: #8b1a4a;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.title-emoji {
+  display: inline-block;
+  animation: wobble 2s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(-8deg); }
+  75%       { transform: rotate(8deg); }
+}
+
+/* Subtitle */
+.surprise-subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #c9386a;
+  margin-bottom: 2.2rem;
+}
+
+/* Buttons row */
+.buttons-container {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Base button */
+.btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+/* YES button */
+.btn-yes {
+  background: linear-gradient(135deg, #e75480, #c9386a);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(231, 84, 128, 0.4);
+}
+
+.btn-yes:hover, .btn-yes--hovered {
+  background: linear-gradient(135deg, #ff6b9d, #e75480);
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 36px rgba(231, 84, 128, 0.5);
+}
+
+.btn-yes:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-icon {
+  animation: pulseHeart 1.5s ease-in-out infinite;
+}
+
+/* NO button */
+.btn-no {
+  background: rgba(255, 255, 255, 0.7);
+  color: #7a4a5e;
+  border: 2px solid rgba(231, 84, 128, 0.3);
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.btn-no:hover {
+  background: rgba(255, 230, 240, 0.9);
+}
+
+/* Hover hint */
+.hover-hint {
+  margin-top: 1.4rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #c9386a;
+  animation: fadeIn 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .surprise-card {
+    padding: 2rem 1.5rem;
+  }
+  .buttons-container {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
