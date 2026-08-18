@@ -4,29 +4,27 @@ import { soundFX } from '../utils/soundEffects'
 
 const messages = [
   {
-    icon: '💌',
-    title: 'The First Spark',
-    quote: 'From the very first moment I met you, I knew you were someone extraordinarily special.',
+    icon: '😊',
+    title: 'ፈገግታሽ',
+    quote: 'ፈገግታሽ ተራ ቀንን እንኳን ልዩ እንዲሆን ያደርገዋል።',
     delay: 0,
   },
   {
-    icon: '🌸',
-    title: 'Watching You Grow',
-    quote:
-      'Watching you push through long study hours, challenge yourself, and excel has been my greatest privilege.',
+    icon: '✨',
+    title: 'ጥንካሬሽ',
+    quote: 'ምንም እንኳን ነገሮች አስቸጋሪ ቢሆኑም ወደፊት መሄድሽን አትተዪም።',
     delay: 150,
   },
   {
-    icon: '✨',
-    title: 'Endless Inspiration',
-    quote:
-      'You inspire me every single day — your intelligence, your elegance, and your golden heart.',
+    icon: '❤️',
+    title: 'ልብሽ',
+    quote: 'ደግነትሽ ከውበትሽ በላይ የሚያስደንቀኝ ነው።',
     delay: 300,
   },
   {
-    icon: '❤️',
-    title: 'My Forever Choice',
-    quote: 'I love you more than words could ever measure, and today I celebrate you with all my heart.',
+    icon: '🌙',
+    title: 'ህልሞችሽ',
+    quote: 'ህልሞችሽን ለማሳካት ስትጥሪ ማየት ደስ ይለኛል።',
     delay: 450,
   },
 ]
@@ -55,7 +53,7 @@ function MessageCard({ icon, title, quote, delay, visible }) {
         <span className="card-heart-btn">
           ❤️ <span className="like-count">{likes > 0 ? likes : ''}</span>
         </span>
-        <span className="tap-hint">Tap card</span>
+        <span className="tap-hint">ካርዱን ንኪው</span>
       </div>
     </div>
   )
@@ -77,9 +75,9 @@ export default function LoveMessage() {
   return (
     <section className="love-section" ref={sectionRef} id="love-message">
       <div className="love-inner">
-        <p className={`section-eyebrow ${visible ? 'fade-up' : ''}`}>A letter from my heart</p>
+        <p className={`section-eyebrow ${visible ? 'fade-up' : ''}`}>ከልቤ የምነግርሽ ትንሽ ነገር 💌</p>
         <h2 className={`section-title love-title ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '100ms' }}>
-          My Dearest Love 💕
+          እኔ ዘንድ ለምን ልዩ እንደሆንሽ ታውቂያለሽ? ❤️
         </h2>
         <div className="divider" />
 
@@ -92,9 +90,9 @@ export default function LoveMessage() {
         <div className={`love-closing ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '600ms' }}>
           <div className="closing-seal">💌</div>
           <p className="love-closing-text">
-            &ldquo;Every single page of your journey is remarkable, and I am honored to be by your side for every step ahead.&rdquo;
+            &ldquo;የህይወትሽን እያንዳንዱን ጉዞ ከ አንቺ ጋ ባሳልፍ ደስ ይለኝ ነበር፤ በቀጣይ ጉዞሽ ሁሉ በሃሳብ ከጎንሽ ነኝ።&rdquo;
           </p>
-          <p className="love-closing-sig">— Forever Yours ❤️</p>
+          <p className="love-closing-sig">— የአንቺ የ ወደፊት ባል ❤️</p>
         </div>
       </div>
     </section>

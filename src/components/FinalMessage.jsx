@@ -57,31 +57,35 @@ export default function FinalMessage() {
         </div>
 
         <h2 className={`final-title ${visible ? 'fade-up' : ''}`}>
-          Always By Your Side
+          አንድ ተጨማሪ ነገር... ❤️
         </h2>
 
         <div className="final-divider" />
 
         <blockquote className={`final-quote ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '200ms' }}>
           <p>
-            &ldquo;No matter where life takes us, I will always be right by your side.&rdquo;
+            &ldquo;ልነግርሽ የምችላቸው ብዙ ነገሮች አሉ፤ ግን ሶስት ቃላት ብቻ ስሜቴን ለመግለጽ በቂ አይደሉም።&rdquo;
           </p>
         </blockquote>
 
         <p className={`final-body ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '350ms' }}>
-          Today you graduate, but our shared journey is only just beginning.
-          Through every tomorrow, every adventure, and every dream yet to unfold —
-          I will be right here cheering the loudest, believing in you, and loving you endlessly.
+          ለአለም አንቺ ምርቃቷን ያጠናቀቀች እና ተስፋ ያላት የፋሽን ዲዛይነር ነሽ።<br /><br />
+          ለእኔ ግን...<br />
+          አለሜን የበለጠ ውብ የምታደርጊው ሰው ነሽ።<br /><br />
+          በአንቺ እኮራለሁ። በአንቺ አምናለሁ። ህልሞችሽን ስትከተዪ ሁሌም ከጎንሽ እሆናለሁ።<br /><br />
+          ከሁሉም በላይ... እወድሻለሁ። ❤️<br /><br />
+          እንኳን ደስ አለሽ የኔዋ ቆንጅዬ። 🎓❤️<br />
+          ውብ ጉዞሽ አሁን ጀምሯል...
         </p>
 
         <div className={`final-signature ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '500ms' }}>
-          <p className="sig-text">I love you ❤️</p>
-          <p className="sig-forever">Forever &amp; Always</p>
+          <p className="sig-text">የኔዋ ቆንጅዬ ንግስት ❤️</p>
+          <p className="sig-forever">ሁሌም እወድሻለው! ❤️</p>
         </div>
 
         <div className="send-love-wrap">
           <button className="btn-send-love" onClick={handleSendLove}>
-            <span>Send Virtual Hug &amp; Love ❤️</span>
+            <span>እዚህ ጫኚ ❤️</span>
             {loveCount > 0 && <span className="love-badge">{loveCount}</span>}
           </button>
         </div>

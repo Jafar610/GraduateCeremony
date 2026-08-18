@@ -4,13 +4,12 @@ import { soundFX } from '../utils/soundEffects'
 import { triggerConfetti } from '../utils/confetti'
 
 const noMessages = [
-  'NO 😅',
-  'Are you sure? 😏',
-  "You can't say no 😄",
-  'Come on! 🥺',
-  "Don't be shy! 💕",
-  'Just say YES! 🌸',
-  'I knew it! ❤️',
+  'አይ 😅',
+  'እርግጠኛ ነሽ? 😏',
+  "በእውነት አይ ልትይ ነው? 😂",
+  'ሞከርሽ... ግን አይሆንም! 😌❤️',
+  "እሺ... አዎ ልትይ እንደምትፈልጊ አውቃለሁ 😘",
+  'የ\'አይ\' ቁልፉ ተስፋ ቆርጧል 😂❤️',
 ]
 
 export default function SurprisePage({ onYes }) {
@@ -65,7 +64,7 @@ export default function SurprisePage({ onYes }) {
       <div className={`surprise-card ${visible ? 'visible' : ''}`}>
         {/* Glowing badge */}
         <div className="card-badge-header">
-          <span className="sparkle-tag">✨ A Secret Surprise</span>
+          <span className="sparkle-tag">✨ ሚስጥራዊ ስጦታ</span>
         </div>
 
         {/* Top emoji pulse */}
@@ -75,12 +74,12 @@ export default function SurprisePage({ onYes }) {
         </div>
 
         <h1 className="surprise-title">
-          Ready for a small surprise?
-          <span className="title-emoji"> 😊</span>
+          ለትንሽ አስገራሚ ስጦታ ዝግጁ ነሽ?
+          <span className="title-emoji"> 🥰</span>
         </h1>
 
         <p className="surprise-subtitle">
-          Something crafted with love &amp; pride is waiting for you&hellip;
+          ለአንቺ ብቻ የሆነ አንድ ነገር አዘጋጅቻለሁ...
         </p>
 
         <div className="buttons-container">
@@ -97,7 +96,7 @@ export default function SurprisePage({ onYes }) {
             }}
           >
             <span className="btn-icon">❤️</span>
-            YES!
+            አዎ!
           </button>
 
           {/* NO button – moves away on hover */}
@@ -127,8 +126,8 @@ export default function SurprisePage({ onYes }) {
           <div className="hover-hint-container">
             <p className="hover-hint">
               {hoverCount < 3
-                ? `Almost there… keep trying! 😄 (YES is getting bigger! ❤️)`
-                : `Resistance is futile! Love wins every time 💕`}
+                ? `ትንሽ ቀረሽ... ሞክሪ! 😄 ('አዎ' እያደገ ነው! ❤️)`
+                : `ማምለጥ አይቻልም! ፍቅር ሁልጊዜ ያሸንፋል 💕`}
             </p>
           </div>
         )}

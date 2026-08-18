@@ -1,40 +1,54 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import './Memories.css'
 import { soundFX } from '../utils/soundEffects'
+import img1 from "../assets/img/img1.jpg"
+import img2 from "../assets/img/img2.jpg"
+import img3 from "../assets/img/img3.jpg"
+import img4 from "../assets/img/img4.jpg"
+import img5 from "../assets/img/img5.jpg"
+import img6 from "../assets/img/img6.jpg"
 
 const initialPhotos = [
   {
     id: 1,
-    src: '/memory1.png',
-    caption: 'A love written in golden sunsets',
+    src: img1,
+    caption: 'ከአንቺ ያየሁት ደስ የሚል ፍገግታ፤ ሁሌም ደስተኛ ሁኚልኝ። ❤️',
     emoji: '🌅',
-    likes: 12,
+    likes: 100,
   },
   {
     id: 2,
-    src: '/memory2.png',
-    caption: 'Walking through our blooming garden',
+    src: img2,
+    caption: 'ቤተሰብ ሲኮራብሽ ማየት እንዴት ደስ ይላል።',
     emoji: '🌸',
     likes: 19,
   },
   {
     id: 3,
-    src: '/memory3.png',
-    caption: 'The day you conquered it all',
+    src: img3,
+    caption: 'የስኬትሽ ቀን',
     emoji: '🎓',
     likes: 28,
   },
   {
     id: 4,
-    src: '/memory4.png',
-    caption: 'Under a thousand glowing stars',
+    src: img4,
+    caption: 'ከ ቤተሰብ ጋር ደስ የሚል ጊዜ ❤️',
     emoji: '⭐',
     likes: 15,
   },
   {
     id: 5,
-    src: '/memory5.png',
-    caption: 'Our favorite moments together',
+    src: img5,
+    caption: 'የደስታ ጊዜያት',
+    emoji: '🥂',
+    likes: 24,
+  },
+  {
+    id: 6,
+    src: img6,
+    caption: 'የደስታ ጊዜያት',
     emoji: '🥂',
     likes: 24,
   },
@@ -81,11 +95,11 @@ export default function Memories() {
   return (
     <section className="memories-section" ref={sectionRef} id="memories">
       <div className="memories-inner">
-        <p className={`section-eyebrow ${visible ? 'fade-up' : ''}`}>Our Story in Pictures</p>
+        <p className={`section-eyebrow ${visible ? 'fade-up' : ''}`}>ታሪካችን በምስል</p>
         <h2 className={`memories-title ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '100ms' }}>
-          Beautiful Memories 🌸
+          የእኛ ትንንሽ ትዝታዎች ❤️
         </h2>
-        <p className="memories-subtitle">Click any photo to open full gallery preview</p>
+        <p className="memories-subtitle">ሙሉ ምስሉን ለማየት ማንኛውንም ፎቶ ጫኚ</p>
         <div className="divider" />
 
         <div className="memories-grid">
@@ -110,7 +124,7 @@ export default function Memories() {
                   <button
                     className="memory-like-btn"
                     onClick={(e) => handleLike(e, photo.id)}
-                    title="Love this photo"
+                    title="ይህን ፎቶ ወደድኩት"
                   >
                     ❤️ {photo.likes}
                   </button>
@@ -122,7 +136,7 @@ export default function Memories() {
       </div>
 
       {/* LIGHTBOX MODAL */}
-      {activePhotoIdx !== null && (
+      {activePhotoIdx !== null && createPortal(
         <div className="lightbox-overlay" onClick={() => setActivePhotoIdx(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-close" onClick={() => setActivePhotoIdx(null)}>
@@ -162,7 +176,8 @@ export default function Memories() {
               ❯
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   )

@@ -3,12 +3,7 @@ import './GraduationSection.css'
 import { triggerConfetti } from '../utils/confetti'
 import { soundFX } from '../utils/soundEffects'
 
-const achievements = [
-  { icon: '📚', label: '1,460+ Days of Effort' },
-  { icon: '🌟', label: 'Endless Dreams Pursued' },
-  { icon: '🎓', label: 'Degree Earned' },
-  { icon: '🚀', label: 'Infinite Future Ahead' },
-]
+
 
 export default function GraduationSection() {
   const sectionRef = useRef(null)
@@ -60,32 +55,18 @@ export default function GraduationSection() {
         </div>
 
         <h2 className={`grad-title ${visible ? 'fade-up' : ''}`}>
-          You Did It!
+          ተሳካልሽ! 🎓✨
         </h2>
         <p className={`grad-subtitle ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '150ms' }}>
-          Congratulations, Official Graduate! 🎉
+          የፋሽን ዲዛይን ምሩቅ በመሆንሽ እንኳን ደስ አለሽ!
         </p>
         <div className="divider" />
 
         <p className={`grad-message ${visible ? 'fade-up' : ''}`} style={{ transitionDelay: '250ms' }}>
-          All those late night study sessions, the perseverance through tough exams, and the unwavering dedication —
-          they all culminate right here in this victorious moment. You faced every obstacle with poise and determination,
-          and today the world celebrates what I always knew:
-          <strong> you are extraordinary.</strong>
+          ፈጠራሽ፣ ትጋትሽ እና ምናብሽ ወደዚህ ውብ ቀን አድርሰውሻል። በቀጣይ ጉዞሽ የት እንደምትደርሺ ለማየት በጣም ጓጉቻለሁ።
         </p>
 
-        <div className="achievements-row">
-          {achievements.map((a, i) => (
-            <div
-              key={a.label}
-              className={`achievement-item ${visible ? 'fade-up' : ''}`}
-              style={{ transitionDelay: `${350 + i * 100}ms` }}
-            >
-              <span className="achievement-icon">{a.icon}</span>
-              <span className="achievement-label">{a.label}</span>
-            </div>
-          ))}
-        </div>
+
 
         <div className="celebrate-btn-wrap">
           <button
@@ -93,7 +74,7 @@ export default function GraduationSection() {
             onClick={handleCelebrate}
           >
             <span className="celebrate-icon">🎓</span>
-            <span>{celebrated ? 'WOOHOO! 🎉🎓' : 'Throw Cap &amp; Celebrate! 🎉'}</span>
+            <span>{celebrated ? 'እንኳን ደስ አለሽ የኔዋ ቆንጅዬ ንግስት!!! 🎉🎓' : 'ቆብሽን ጥለሽ አክብሪ! 🎉'}</span>
           </button>
         </div>
       </div>

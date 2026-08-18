@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import './HeroSection.css'
 
 const heroPhrases = [
-  'Congratulations my love',
-  'So proud of your achievement',
-  'You made your dreams come true',
-  'Here’s to our forever',
+  'እንኳን ደስ አለሽ የኔዋ! 🎓❤️',
+  'በአንቺ በጣም እኮራለሁ',
+  'ህልሞችሽን እውን አድርገሻል',
+  'ለዘላለም አብረን እንሆናለን',
 ]
 
 function RotatingTypingText() {
@@ -79,16 +79,16 @@ export default function HeroSection() {
         </h1>
 
         <div className="hero-milestones">
-          <span className="milestone-pill">🎓 Graduate 2026</span>
-          <span className="milestone-pill">💖 Infinity &amp; Beyond</span>
-          <span className="milestone-pill">✨ 100% Loved</span>
+          <span className="milestone-pill">🎓 የ2026 ምሩቅ</span>
+          <span className="milestone-pill">💖 እስከ ዘላለም እና ከዚያም በላይ</span>
+          <span className="milestone-pill">✨ ሙሉ በሙሉ የተወደድሽ</span>
         </div>
 
         <p className="hero-tagline">
-          This historic day is yours — and I couldn&apos;t be prouder to stand beside you.
+          አውቃለሁ ትንሽ ረፍዶ ሊሆን ይችላል ገን አረሳሁትም እሺ፤ እንኳን ድስ አለሽ የኔዋ ኮንጅዬ ንግስት።
         </p>
 
-        <a href="#love-message" className="hero-scroll-hint" aria-label="Scroll down">
+        <a href="#love-message" className="hero-scroll-hint" aria-label="ወደ ታች ውረጅ">
           <span className="scroll-arrow">↓</span>
         </a>
       </div>

@@ -112,7 +112,7 @@ function InteractiveParticleCanvas() {
 
 function FloatingAudioWidget({ isPlaying, togglePlay }) {
   return (
-    <div className="audio-widget" onClick={togglePlay} title={isPlaying ? 'Pause Music' : 'Play Music'}>
+    <div className="audio-widget" onClick={togglePlay} title={isPlaying ? 'ሙዚቃ አቁም' : 'ሙዚቃ አጫውት'}>
       <button className={`audio-btn ${isPlaying ? 'playing' : ''}`}>
         <span className="audio-icon">{isPlaying ? '🎵' : '🔇'}</span>
         <div className="sound-wave">
